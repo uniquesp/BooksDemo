@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RegistrationForm</title>
+
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+<!-- STYLE CSS -->
+<link rel="stylesheet" href="CSS/RegLstyle.css">
+
+</head>
+<body>
+	<div class="wrapper" style="background-image: url('images/Bgimg.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="images/sideimg2.jpg" alt="">
+					<div class="loginlink"> 
+						Already Have Aaccount <a href="Login.html">Login Here </a></div>
+				   </div>
+			<form action="Registration.jsp" method="Post">
+					<h3>Registration Form</h3>
+					<div class="form-wrapper">
+						<input type="text" name="name" id="name" placeholder="Name" class="form-control" autofocus required>
+						<i class="zmdi zmdi-account"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" name="email" id="email" placeholder="Email Address" class="form-control" required>
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-group">
+						<input type="text" name="mobile" id="mobile" placeholder="Mobile No" class="form-control" required>
+						<input type="date" name="dob" id="dob" placeholder="BirthDate" class="form-control" required>
+					</div>					
+					<div class="form-wrapper">
+						<select class="form-control" name="gender" id="gender"  required>
+							<option value="" disabled selected>Gender</option>
+							<option value="male">Male</option>
+							<option value="female">Female</option>
+							<option value="other">Other</option>
+							<option value="no">Not to Specify</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="text" name="add" id="add" placeholder="Address" class="form-control" required>
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<select class="form-control" name="intrest" id="intrest"  required>
+							<option value="" disabled selected>Intrest</option>
+							<option value="novel">Novel</option>
+							<option value="romance">Romance</option>
+							<option value="self-development">Self-Development</option>
+							<option value="biography">Biography</option>
+							<option value="thrillars">Thrillars</option>
+							<option value="poetry">Poetry</option>
+							<option value="fiction">Fiction</option>
+							<option value="spiritual">Spiritual</option>
+							<option value="Academic">Academic</option>
+						</select>
+						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="pass" id="pass" placeholder="Password" class="form-control" required>
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="cpass" id="cpass" placeholder="Confirm Password" class="form-control" required>
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+					<button name="reg" id="reg" value="submit">Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+</body>
+</html>

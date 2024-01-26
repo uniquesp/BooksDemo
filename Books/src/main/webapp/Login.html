@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LoginForm</title>
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="CSS/RegLstyle.css">
+
+</head>
+<body>
+
+		<div class="wrapper" style="background-image: url('images/Bgimg.jpg');">
+			<div class="inner">
+				<div class="image-holder">
+					<img src="images/sideimg2.jpg" alt="">
+					<div class="loginlink"> 
+						Not Have Account New User?? <a href="Registration.html">Register Here </a></div>
+				   </div>
+				<form action="Login.jsp" method="post">
+					<h3>Login Form</h3>
+					
+					<div class="form-wrapper">
+						<input type="email" name="email" id="email" placeholder="Email Address" class="form-control">
+						<i class="zmdi zmdi-email"></i>
+					</div>
+					<div class="form-wrapper">
+						<input type="password" name="pass" id="pass" placeholder="Password" class="form-control">
+						<i class="zmdi zmdi-lock"></i>
+					</div>
+
+					<button name="login" id="login" value="submit">Login
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+				</form>
+			</div>
+		</div>
+		
+		
+</body>
+</html>
