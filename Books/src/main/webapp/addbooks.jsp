@@ -23,10 +23,10 @@
     
     String languageString = (languages != null) ? String.join(",", languages) : "";
 	
-    out.print("your Data is :"+bname+author+year+category+price+languages+publisher+description+status+timestamp);
+  
 
-   // if (bname != null && author != null && year != null && category != null && price != null && languageString != null && publisher != null  && description != null  && status != null) {
-       /// if (!bname.equals("") && !author.equals("") && !year.equals("") && !category.equals("") && !price.equals("") && !languageString.equals("") && !publisher.equals("") && !description.equals("") && !status.equals("")) {
+    if (bname != null && author != null && year != null && category != null && price != null && languageString != null && publisher != null  && description != null  && status != null) {
+        if (!bname.equals("") && !author.equals("") && !year.equals("") && !category.equals("") && !price.equals("") && !languageString.equals("") && !publisher.equals("") && !description.equals("") && !status.equals("")) {
 			
         	 Connection conn = null; // Declare Connection outside the try block
         	 
@@ -81,8 +81,8 @@
                     e.printStackTrace();
                 }
             }
-        //}
-   // }
+        }
+    }
 %>
 
  <script>

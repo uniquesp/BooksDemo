@@ -30,11 +30,12 @@
             rs = pst.executeQuery();
 
             if (rs.next()) {
-                int userId = rs.getInt("id");
+            	String userId = Integer.toString(rs.getInt("id"));
                 HttpSession ses = request.getSession();
                 ses.setAttribute("userId", userId);
                 response.sendRedirect("books.jsp");
             } else {
+    
                 out.println("<font color='red' size='18'>Invalid Credentials !!!</font>");
                 out.println("<a href='Login.html' size='10'>Try Again</a>");
             }
