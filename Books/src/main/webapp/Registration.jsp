@@ -18,7 +18,7 @@
     String pass = request.getParameter("pass");
     Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 
-    int updateQuery = 0;
+
 
     if (fname != null && mail != null && phone != null && dob != null && gender != null && intrest != null && pass != null) {
         if (!fname.equals("") && !mail.equals("") && !phone.equals("") && !dob.equals("") && !gender.equals("") && !intrest.equals("") && !pass.equals("")) {

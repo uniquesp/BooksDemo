@@ -33,5 +33,6 @@
 	<classpathentry kind="lib" path="E:/jarfiles/mysql-connector-j-8.0.31.jar"/>
 	<classpathentry kind="lib" path="E:/jarfiles/servlet-api.jar"/>
 	<classpathentry kind="lib" path="E:/jarfiles/tomcat-juli.jar"/>
+	<classpathentry kind="lib" path="D:/Program Files/Java/jdk-21/lib/src.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

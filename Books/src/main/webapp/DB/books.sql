@@ -33,7 +33,7 @@ CREATE TABLE `tblbooks` (
   `publication_year` int(4) DEFAULT NULL,
   `category` varchar(50) DEFAULT NULL,
   `price` decimal(10, 2) DEFAULT NULL,
-  `language` varchar(50) DEFAULT NULL,
+  `language` varchar(255) DEFAULT NULL,
   `publisher` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
   `image_url` varchar(255) DEFAULT NULL, -- URL/path to the book image
