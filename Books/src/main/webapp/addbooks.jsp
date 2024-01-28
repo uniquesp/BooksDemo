@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="java.sql.*, java.io.*, java.util.*" %>
 
+
+<%
+    String uid=(String)session.getAttribute("userId");
+    if (uid == null || uid.isEmpty()) {
+        out.print("<center><h2>Please Login!!</h2><a href='Login.html'>Goto Login Page</a></center>");
+    } else {
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +42,7 @@
         	 Class.forName("com.mysql.jdbc.Driver");
              conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/books", "root", "");
              Statement stmt=conn.createStatement();
-             out.print("Conection Established !!");
+             //out.print("Conection Established !!");
              
              ResultSet rs=stmt.executeQuery("SELECT count(id) FROM tblbooks	;");
              int c = 0,cnt=0;
@@ -65,7 +73,7 @@
             pst.setString(11, timestamp.toString());
 
             pst.executeUpdate();
-            out.print("Added onto a db");
+            response.sendRedirect("books.jsp");
 %>
 			
 <% 
@@ -85,11 +93,7 @@
     }
 %>
 
- <script>
- 	//alert("Books Added !!")
- 	//window.location.href = "addbooks.html";
- 
- </script>
+<%} %>
 
 </body>
 </html>

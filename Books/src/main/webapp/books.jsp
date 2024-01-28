@@ -70,8 +70,6 @@
                             <% 
                                 while(resultset.next()) { 
                                     String bookId = resultset.getString(1);
-                                    HttpSession sesid = request.getSession();
-                                    sesid.setAttribute("bookId", bookId);
                             %>
                             <tr>
                                 <td><%= count %></td>
@@ -82,7 +80,12 @@
                                 <td><%= resultset.getString(6) %></td>
                                 <% 
                                     String status = resultset.getString(10);
-                                    st = (status.equals("1")) ? "Active" : "Inactive";
+                                	if(status.equals("1")){
+                                		st = "Active";
+                                	}
+                                	else{
+                                		st = "Inactive";
+                                	}
                                 %>
                                 <td><%= st %></td>
                                 <td>
@@ -91,6 +94,8 @@
                                 </td>
                             </tr>
                             <% 
+                                session.setAttribute("editBookId_" + bookId, bookId);
+                                session.setAttribute("deleteBookId_" + bookId, bookId);
                                 count++;
                             } %>
                             

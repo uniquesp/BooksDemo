@@ -10,6 +10,33 @@
 <!-- STYLE CSS -->
 <link rel="stylesheet" href="CSS/RegLstyle.css">
 
+<script type="text/javascript">
+function Validate() {
+    var pass = document.getElementById("pass").value;
+    var confirmpass = document.getElementById("cpass").value;
+    if (pass != confirmpass) {
+        alert("You first Passwords is not similar with 2nd password. Please enter same password in both");
+        return false;
+    }
+    return true;
+}
+
+function validDate() {	    
+var dob = new Date(document.getElementById("dob").value);
+var currentDate = new Date();
+var tenYearsAgo = new Date(currentDate);
+tenYearsAgo.setFullYear(currentDate.getFullYear() - 10);
+
+if (dob >= tenYearsAgo || dob >= currentDate) {
+alert("Birthdate should be more than 10 years ago and not the current date.");
+return false;
+}
+
+return true;    
+}
+</script>
+
+
 </head>
 <body>
 	<div class="wrapper" style="background-image: url('images/Bgimg.jpg');">
@@ -22,7 +49,7 @@
 			<form action="Registration.jsp" method="Post">
 					<h3>Registration Form</h3>
 					<div class="form-wrapper">
-						<input type="text" name="name" id="name" placeholder="Name" class="form-control" autofocus required>
+						<input type="text" name="name" id="name" placeholder="Name" pattern=" /^[A-Za-z\s'-]+$/" class="form-control" autofocus required>
 						<i class="zmdi zmdi-account"></i>
 					</div>
 					<div class="form-wrapper">
@@ -30,8 +57,8 @@
 						<i class="zmdi zmdi-email"></i>
 					</div>
 					<div class="form-group">
-						<input type="text" name="mobile" id="mobile" placeholder="Mobile No" class="form-control" required>
-						<input type="date" name="dob" id="dob" placeholder="BirthDate" class="form-control" required>
+						<input type="text" name="mobile" id="mobile" placeholder="Mobile No" pattern="[789][0-9]{9}" class="form-control" required>
+						<input type="date" name="dob" id="dob" placeholder="BirthDate" onclick="validDate()"  class="form-control" required>
 					</div>					
 					<div class="form-wrapper">
 						<select class="form-control" name="gender" id="gender"  required>
@@ -63,14 +90,14 @@
 						<i class="zmdi zmdi-caret-down" style="font-size: 17px"></i>
 					</div>
 					<div class="form-wrapper">
-						<input type="password" name="pass" id="pass" placeholder="Password" class="form-control" required>
+						<input type="password" name="pass" id="pass" placeholder="Password" minlength="6" class="form-control" required>
 						<i class="zmdi zmdi-lock"></i>
 					</div>
 					<div class="form-wrapper">
-						<input type="password" name="cpass" id="cpass" placeholder="Confirm Password" class="form-control" required>
+						<input type="password" name="cpass" id="cpass" placeholder="Confirm Password" minlength="6" class="form-control" required>
 						<i class="zmdi zmdi-lock"></i>
 					</div>
-					<button name="reg" id="reg" value="submit">Register
+					<button name="reg" id="reg" onclick="return Validate()" value="submit">Register
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 				</form>

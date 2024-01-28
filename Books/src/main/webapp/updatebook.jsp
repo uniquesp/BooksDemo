@@ -1,6 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ page import="java.sql.*"%>
+    
+ <%
+    String uid=(String)session.getAttribute("userId");
+    if (uid == null || uid.isEmpty()) {
+        out.print("<center><h2>Please Login!!</h2><a href='Login.html'>Goto Login Page</a></center>");
+    } else {
+%>  
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +19,8 @@
 
 
 <%
-    String bookId = (String)session.getAttribute("bookId");
+    String bookId = (String) session.getAttribute("editFinalBid");
+    String myDemoBookID = (String)session.getAttribute("myDemoBookID");
     String title = request.getParameter("title");
     String author = request.getParameter("author");
     String publicationYear = request.getParameter("publication_year");
@@ -21,8 +30,7 @@
     String description = request.getParameter("description");
     String status = request.getParameter("status");
     String[] languages = request.getParameterValues("language");
-    out.println(""+bookId+title+author+publicationYear+category+price+publisher+description);
-
+    
     try {
         Class.forName("com.mysql.jdbc.Driver");
         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/books", "root", "");
@@ -57,5 +65,6 @@
     }
 %>
 
+<% } %>
 </body>
 </html>
