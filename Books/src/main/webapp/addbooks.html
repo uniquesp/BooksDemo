@@ -3,48 +3,92 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>AddBooks</title>
+<link rel="stylesheet" href="CSS/Form.css">
+
+<style>
+body{
+background-image: url('images/Bgimg.jpg') !important; /* Replace 'your-background-image.jpg' with the actual image file path */
+background-size: cover;
+background-position: center;
+}
+
+
+</style>
 </head>
 <body>
-	 <form action="addbooks.jsp" method="post">
+	<div class="container">
+        <h1>Book Information</h1>
+        <form action="addbooks.jsp" method="post">
 
-        <label for="title">Title:</label>
-        <input type="text" name="title" required><br>
+            <div class="form-group">
+                <label for="title">Book Title:</label>
+                <input type="text" id="title" name="title" required>
+            </div>
 
-        <label for="author">Author:</label>
-        <input type="text" name="author" required><br>
+            <div class="form-group">
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author" required>
+            </div>
 
-        <label for="publication_year">Publication Year:</label>
-        <input type="text" name="publication_year" required><br>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="publication_year">Publication Year:</label>
+                <input type="text" id="publication_year" name="publication_year" required>
+            </div>
+            <div class="form-group">
+                <label for="category">Category:</label>
+                <select id="category" name="category" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="fiction">Fiction</option>
+                    <option value="non-fiction">Non-Fiction</option>
+                    <option value="mystery">Mystery</option>
+                    <option value="romace">Romance</option>
+                    <option value="selfdevp">Self-Development</option>
+                    <option value="academics">Academics</option> 
+                </select>
+            </div>
+        </div>
 
-        <label for="category">Category:</label>
-        <select name="category">
-            <option value="fiction">Fiction</option>
-            <option value="non-fiction">Non-Fiction</option>
-            <option value="mystery">Mystery</option>
-            <!-- Add more categories as needed -->
-        </select><br>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="price">Price:</label>
+                    <input type="text" id="price" name="price" required>
+                </div>
+            <div class="form-group">
+                    <label for="publisher">Publisher:</label>
+                    <input type="text" id="publisher" name="publisher" required>
+                </div>
+            </div>
 
-        <label for="price">Price:</label>
-        <input type="text" name="price" required><br>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="description">Description:</label><br>
+                    <textarea id="description" name="description" rows="4" cols="50"></textarea>
+                </div>
+            </div>
 
-        <label for="language">Language:</label><br>
-        <input type="checkbox" name="language" value="marathi"> Marathi
-        <input type="checkbox" name="language" value="hindi"> Hindi
-        <input type="checkbox" name="language" value="english"> English
-        <input type="checkbox" name="language" value="other"> Other<br>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="status">Status:</label><br>
+                    <input type="radio" id="active" name="status" value="1" checked> Active
+                    <input type="radio" id="inactive" name="status" value="0"> Inactive
+                </div>
+                 <div class="form-group">
+                    <label for="language">Language:</label><br>
+                    <input type="checkbox" id="marathi" name="language" value="marathi"> Marathi
+                    <input type="checkbox" id="hindi" name="language" value="hindi"> Hindi
+                    <input type="checkbox" id="english" name="language" value="english"> English
+                    <input type="checkbox" id="other" name="language" value="other"> Other
+                </div>
+            </div>
+                 
 
-        <label for="publisher">Publisher:</label>
-        <input type="text" name="publisher" required><br>
-
-        <label for="description">Description:</label><br>
-        <textarea name="description" rows="4" cols="50"></textarea><br>
-
-        <label for="status">Status:</label><br>
-        <input type="radio" name="status" value="1" checked> Active
-        <input type="radio" name="status" value="0"> Inactive<br>
-
-        <input type="submit" value="submit">
-    </form>
+            <div class="form-group">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+	
 	
 </body>
 </html>

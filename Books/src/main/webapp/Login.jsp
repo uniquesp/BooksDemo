@@ -36,8 +36,8 @@
                 response.sendRedirect("books.jsp");
             } else {
     
-                out.println("<font color='red' size='18'>Invalid Credentials !!!</font>");
-                out.println("<a href='Login.html' size='10'>Try Again</a>");
+                out.println("<center><font color='red' size='18'>Invalid Credentials !!!</font>");
+                out.println("<a href='Login.html' size='10'><br><br>Back to Login</a></center>");
             }
         } catch (Exception e) {
             e.printStackTrace();

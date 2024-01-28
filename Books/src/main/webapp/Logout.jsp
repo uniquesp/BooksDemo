@@ -7,6 +7,14 @@
 <title>Logout</title>
 </head>
 <body>
+	<%
+		session.invalidate();
+		response.sendRedirect("Login.html");
 
+     %>
+
+        
+
+    </body>
 </body>
 </html>
