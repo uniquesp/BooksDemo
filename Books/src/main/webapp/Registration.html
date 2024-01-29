@@ -21,19 +21,23 @@ function Validate() {
     return true;
 }
 
-function validDate() {	    
-var dob = new Date(document.getElementById("dob").value);
-var currentDate = new Date();
-var tenYearsAgo = new Date(currentDate);
-tenYearsAgo.setFullYear(currentDate.getFullYear() - 10);
 
-if (dob >= tenYearsAgo || dob >= currentDate) {
-alert("Birthdate should be more than 10 years ago and not the current date.");
-return false;
+function validDate() {	  
+	//console.log("validDate function is being called");
+    var dob = new Date(document.getElementById("dob").value);
+    var currentDate = new Date();
+    var tenYearsAgo = new Date(currentDate);
+    tenYearsAgo.setFullYear(currentDate.getFullYear() - 10);
+
+    if (dob >= tenYearsAgo || dob >= currentDate) {
+        alert("Birthdate should be more than 10 years ago and not the current date.");
+        return false;
+    }
+
+    return true;    
 }
 
-return true;    
-}
+
 </script>
 
 
@@ -49,16 +53,16 @@ return true;
 			<form action="Registration.jsp" method="Post">
 					<h3>Registration Form</h3>
 					<div class="form-wrapper">
-						<input type="text" name="name" id="name" placeholder="Name" pattern=" /^[A-Za-z\s'-]+$/" class="form-control" autofocus required>
+						<input type="text" name="name" id="name" placeholder="Name" pattern="[A-Za-z\s'-]+" class="form-control" autofocus required>
 						<i class="zmdi zmdi-account"></i>
 					</div>
 					<div class="form-wrapper">
-						<input type="text" name="email" id="email" placeholder="Email Address" class="form-control" required>
+						<input type="email" name="email" id="email" placeholder="Email Address" class="form-control" required>
 						<i class="zmdi zmdi-email"></i>
 					</div>
 					<div class="form-group">
 						<input type="text" name="mobile" id="mobile" placeholder="Mobile No" pattern="[789][0-9]{9}" class="form-control" required>
-						<input type="date" name="dob" id="dob" placeholder="BirthDate" onclick="validDate()"  class="form-control" required>
+						<input type="date" name="dob" id="dob" placeholder="BirthDate" class="form-control" required>
 					</div>					
 					<div class="form-wrapper">
 						<select class="form-control" name="gender" id="gender"  required>
@@ -97,7 +101,7 @@ return true;
 						<input type="password" name="cpass" id="cpass" placeholder="Confirm Password" minlength="6" class="form-control" required>
 						<i class="zmdi zmdi-lock"></i>
 					</div>
-					<button name="reg" id="reg" onclick="return Validate()" value="submit">Register
+					<button name="reg" id="reg" onclick="return Validate(), validDate()" value="submit">Register
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
 				</form>

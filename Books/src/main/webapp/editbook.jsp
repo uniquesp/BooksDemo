@@ -142,6 +142,7 @@ background-position: center;
             conn.close();
         } catch (Exception e) {
             e.printStackTrace();
+            out.println("<center><h2>Error updating book details. Please try again.</h2><center>");
         }
     }
 %>

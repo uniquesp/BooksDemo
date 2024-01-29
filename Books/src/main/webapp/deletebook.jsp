@@ -17,7 +17,7 @@
 <body>
 
 <%
-    //String bookId = (String)session.getAttribute("finalBid");
+   
 
     String clickedBookId = request.getParameter("bookId");
     String bookId = (String) session.getAttribute("deleteBookId_" + clickedBookId);

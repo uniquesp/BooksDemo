@@ -20,7 +20,7 @@
 
 <%
     String bookId = (String) session.getAttribute("editFinalBid");
-    String myDemoBookID = (String)session.getAttribute("myDemoBookID");
+   // String myDemoBookID = (String)session.getAttribute("myDemoBookID");
     String title = request.getParameter("title");
     String author = request.getParameter("author");
     String publicationYear = request.getParameter("publication_year");
@@ -54,14 +54,15 @@
         conn.close();
 
         if (rowsAffected > 0) {
-            out.println("<h2>Book details updated successfully!</h2>");
+            out.println("<center><h2>Book details updated successfully!</h2><center>");
+            out.println("<center><a href='Books.jsp'><h2>Goto Book List</h2></a></center>");
         } else {
-            out.println("<h2>Failed to update book details. Please try again.</h2>");
+            out.println("<center><h2>Failed to update book details. Please try again.</h2><center>");
         }
 
     } catch (Exception e) {
         e.printStackTrace();
-        out.println("<h2>Error updating book details. Please try again.</h2>");
+        out.println("<center><h2>Error updating book details. Please try again.</h2><center>");
     }
 %>
 
